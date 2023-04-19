@@ -1,0 +1,46 @@
+main {
+  padding: var(--gap-s);
+  margin-bottom: var(--gap-xxl);
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-s);
+}
+
+article:before {
+}
+
+article.card {
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.08);
+  padding: var(--gap-s);
+  border-top: var(--gap-xs) solid var(--color-primary);
+}
+
+.card::before {
+  content: url("/media/icon_bookmark_small.png");
+  margin: 0px auto;
+  padding: 8px;
+  text-align: center;
+  padding: var(--gap-xxs);
+  float: right;
+  background: var(--color-primary);
+  width: var(--gap-l);
+  height: var(--gap-l);
+  border-radius: 50px;
+  /*
+  content: "";
+  background-image: url("/media/icon_bookmark.svg");
+  background-size:contain;
+  */
+}
+
+.card button {
+  background-color: var(--color-primary);
+  color: var(--color-font-inverse);
+  padding: var(--gap-xs);
+  border-radius: 8px;
+}
