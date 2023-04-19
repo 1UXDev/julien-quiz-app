@@ -1,0 +1,41 @@
+@import "header.css";
+@import "content.css";
+
+:root {
+  --color-primary: #6710e0;
+  --color-secondary: #9b7ee0;
+  --color-background: rgb(250, 245, 246);
+  --color-nav: rgb(255, 255, 255);
+  --color-font: rgb(50, 50, 50);
+  --color-font-inverse: white;
+
+  --background-gradient-nav: linear-gradient(
+    70deg,
+    rgb(100, 60, 200),
+    rgb(150, 70, 170)
+  );
+  --background-gradient-body: linear-gradient(
+    0deg,
+    rgb(70, 25, 177),
+    rgb(248, 218, 244)
+  );
+
+  --font-copy: "Roboto", sans-serif;
+  --font-header: "Bangers", cursive;
+
+  --gap-xxs: 3px;
+  --gap-xs: 6px;
+  --gap-s: 12px;
+  --gap-m: 24px;
+  --gap-l: 36px;
+  --gap-xl: 48px;
+  --gap-xxl: 96px;
+}
+
+body {
+  background-color: var(--color-background);
+  background: var(--background-gradient-body);
+  color: var(--color-font);
+  margin: 0px;
+  font-family: var(--font-copy);
+}
