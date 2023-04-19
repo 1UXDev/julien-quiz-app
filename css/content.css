@@ -1,6 +1,7 @@
 main {
   padding: var(--gap-s);
   margin-bottom: var(--gap-xxl);
+  margin-top: var(--gap-m);
 }
 
 section {
