@@ -6,7 +6,7 @@ main {
 section {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-s);
+  gap: var(--gap-m);
 }
 
 article:before {
@@ -27,7 +27,7 @@ article.card {
   text-align: center;
   padding: var(--gap-xxs);
   float: right;
-  background: var(--color-primary);
+  background: var(--color-secondary);
   width: var(--gap-l);
   height: var(--gap-l);
   border-radius: 50px;
@@ -38,9 +38,41 @@ article.card {
   */
 }
 
+.card h2 {
+  padding-bottom: var(--gap-s);
+}
+
 .card button {
   background-color: var(--color-primary);
   color: var(--color-font-inverse);
-  padding: var(--gap-xs);
+  padding: var(--gap-s);
   border-radius: 8px;
+  border: none;
+  margin-bottom: var(--gap-s);
+}
+
+.card ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  list-style-type: none;
+  padding-inline-start: unset;
+  gap: var(--gap-s);
+  margin-top: var(--gap-m);
+}
+
+.card ul li {
+  background-color: var(--color-secondary);
+  padding: var(--gap-xs) var(--gap-m);
+  border-radius: 50px;
+  color: var(--color-font-inverse);
+}
+
+.card .answer {
+  padding: var(--gap-m);
+  background-color: var(--color-secondary);
+  color: var(--color-font-inverse);
+  margin: 12px -12px;
+
+  /*display: none;*/
 }

@@ -2,6 +2,7 @@ header {
   /*fonts & colors*/
   font-family: var(--font-header);
   background-color: var(--color-primary);
+  background: var(--background-gradient-nav);
   color: var(--color-font-inverse);
   text-align: center;
   font-size: 1.5em;
@@ -9,11 +10,25 @@ header {
   padding: var(--gap-xxs);
 }
 
+header h1 {
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+}
+
 nav {
-  background-color: var(--color-primary);
+  background-color: var(--color-nav);
   position: fixed;
   bottom: 0px;
   width: 100%;
+  border-top: 2px solid var(--color-primary);
+}
+
+nav::before {
+  width: 500px;
+  height: 12px;
+  background-color: black;
+  display: block;
+  bottom: 0px;
 }
 
 nav ul {
