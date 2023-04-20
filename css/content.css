@@ -166,8 +166,15 @@ input.mytoggle:checked + label.mytoggle {
   background: var(--color-primary);
 }
 
-input.mytoggle:checked > span {
+.darkmodeOFF {
   display: none;
+}
+
+input.mytoggle:checked ~ .darkmodeON {
+  display: none;
+}
+input.mytoggle:checked ~ .darkmodeOFF {
+  display: block;
 }
 
 /* other general card styles*/
