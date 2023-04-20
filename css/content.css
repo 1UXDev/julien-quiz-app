@@ -48,8 +48,19 @@ article.card {
   background-color: var(--color-primary);
 }
 
+.navhelp {
+  padding: var(--gap-xs) var(--gap-l);
+  font-weight: bold;
+  text-align: center;
+  border-radius: 30px;
+  background: var(--background-gradient-nav);
+  width: 50%;
+  color: var(--color-font-inverse);
+  margin: -24px 20% 12px 20%;
+}
+
 /*
-profile pagfe styles
+profile page styles
 */
 
 .card.profile .user {
