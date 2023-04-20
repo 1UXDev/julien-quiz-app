@@ -2,6 +2,14 @@ main {
   padding: var(--gap-s);
   margin-bottom: var(--gap-xxl);
   margin-top: var(--gap-m);
+  line-height: 1.3em;
+}
+
+h2 {
+  line-height: 1.2em;
+}
+
+p {
 }
 
 section {
@@ -21,23 +29,148 @@ article.card {
   border-top: var(--gap-xs) solid var(--color-primary);
 }
 
-.card::before {
-  content: url("/media/icon_bookmark_small.png");
-  margin: 0px auto;
-  padding: 8px;
+.card:before {
+  content: url("/media/icon_bookmark_new_small_inactive.svg");
   text-align: center;
-  padding: var(--gap-xxs);
   float: right;
-  background: var(--color-secondary);
-  width: var(--gap-l);
-  height: var(--gap-l);
+  background-color: var(--color-secondary);
+  width: 40px;
+  height: 30px;
   border-radius: 50px;
-  /*
-  content: "";
-  background-image: url("/media/icon_bookmark.svg");
-  background-size:contain;
-  */
+  padding-top: 10px;
 }
+
+.bookmarked::before {
+  background-color: var(--color-primary);
+  content: url("/media/icon_bookmark_new_small.svg");
+}
+
+/*
+profile pagfe styles
+*/
+
+.card.profile .user {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-l);
+  align-items: center;
+  padding: var(--gap-m) 0px;
+}
+
+.card.profile .about {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: var(--gap-l);
+}
+
+.card.profile .settings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-m);
+  align-items: center;
+}
+
+.card.profile .user img {
+  width: 30%;
+  border-radius: 200px;
+}
+
+.card.profile h2 {
+  font-weight: 800;
+}
+
+.card.profile h3 {
+  margin-block-start: 1em;
+  margin-block-end: 0em;
+  width: 100%;
+}
+
+.card.profile .counter {
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap-s);
+}
+
+.counter .questions,
+.counter .bookmarks {
+  border-radius: 12px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap-m);
+  align-items: center;
+  padding: 6px 24px 6px 6px;
+  cursor: pointer;
+}
+
+.counter img {
+  height: 24px;
+  border-radius: 100px;
+  padding: 3px;
+}
+.counter .questions img {
+  background-color: var(--color-tertiary);
+}
+.counter .bookmarks img {
+  background-color: var(--color-primary);
+}
+
+.counter span {
+  font-size: 1.2em;
+}
+
+.counter .questions {
+  border: 3px solid var(--color-tertiary);
+}
+
+.counter .bookmarks {
+  border: 3px solid var(--color-primary);
+}
+
+.profile:before {
+  display: none;
+}
+
+label.mytoggle {
+  display: block;
+  width: 54px;
+  height: 26px;
+  border: 5px solid var(--color-primary);
+  border-radius: 20px;
+  background: white;
+  cursor: pointer;
+}
+
+label.mytoggle:before {
+  content: "";
+  display: block;
+  width: 22px;
+  height: 22px;
+  background: var(--color-secondary);
+  border-radius: 50px;
+  border: 2px solid var(--color-font-inverse);
+}
+
+input.mytoggle {
+  display: none;
+}
+
+input.mytoggle:checked + label.mytoggle::before {
+  position: relative;
+  left: 50%;
+}
+
+input.mytoggle:checked + label.mytoggle {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+}
+
+input.mytoggle:checked > span {
+  display: none;
+}
+
+/* other general card styles*/
 
 .card h2 {
   padding-bottom: var(--gap-s);
@@ -50,6 +183,18 @@ article.card {
   border-radius: 8px;
   border: none;
   margin-bottom: var(--gap-s);
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.card button:hover {
+  background-color: var(--color-primary);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.16);
+}
+
+.card code {
+  font-size: large;
 }
 
 .card ul {
@@ -74,6 +219,27 @@ article.card {
   background-color: var(--color-secondary);
   color: var(--color-font-inverse);
   margin: 12px -12px;
+  display: none;
+}
 
-  /*display: none;*/
+.card .answer.active {
+  display: block;
+}
+
+/* Alternating Card Styles*/
+article.card:nth-child(2n) {
+  border-top: var(--gap-xs) solid var(--color-tertiary);
+}
+
+.card:nth-child(2n)::before {
+  background: var(--color-quartary);
+}
+
+.card:nth-child(2n) button {
+  background-color: var(--color-tertiary);
+}
+
+.card:nth-child(2n) .answer,
+.card:nth-child(2n) li {
+  background-color: var(--color-quartary);
 }

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script type="text/javascript" src="/js/script.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>BrainBrawler</h1>
+    </header>
+    <nav>
+      <ul>
+        <li id="home" class="" href="/index.html">
+          <img src="media/icon_home_new_square.svg" title="home" />
+        </li>
+        <li id="bookmarks" class="" href="/bookmarks.html">
+          <img src="media/icon_bookmark_new_square.svg" title="bookmark" />
+        </li>
+        <li id="profile" class="selected" href="/profile.html">
+          <img src="media/icon_profile_new_square.svg" title="profile" />
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <section>
+        <article class="card profile">
+          <div class="user">
+            <img src="/media/profile_picture.png" alt="profile picture" />
+            <h2>Max Power</h2>
+          </div>
+          <div class="about">
+            <h3>About Me</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat,
+              nam et debitis itaque obcaecati perferendis vel exercitationem
+              blanditiis, placeat voluptatem nostrum ipsa temporibus ullam velit
+              unde. In consequatur facilis eos?
+            </p>
+            <div class="counter">
+              <div class="questions">
+                <img
+                  src="/media/icon_question.svg"
+                  alt="questionmakr icon"
+                /><span>12</span>
+              </div>
+              <div class="bookmarks">
+                <img
+                  src="/media/icon_bookmark_new_square.svg"
+                  alt="bookmark icon"
+                /><span>4</span>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="settings">
+            <h3>Settings</h3>
+            <input class="mytoggle" type="checkbox" id="toggle" />
+            <label class="mytoggle" for="toggle"></label>
+            <span>Turn on Darkmode</span>
+          </div>
+        </article>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
+</html>

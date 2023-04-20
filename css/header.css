@@ -6,6 +6,7 @@ header {
   color: var(--color-font-inverse);
   text-align: center;
   font-size: 1.5em;
+  letter-spacing: 0.1em;
 
   padding: var(--gap-xxs);
 }
@@ -21,24 +22,29 @@ nav {
   bottom: 0px;
   width: 100%;
   border-top: 2px solid var(--color-primary);
-}
-
-nav::before {
-  width: 500px;
-  height: 12px;
-  background-color: black;
-  display: block;
-  bottom: 0px;
+  border-radius: 12px 12px 10px 0px;
 }
 
 nav ul {
   display: flex;
   justify-content: space-around;
   list-style-type: none;
-  height: var(--gap-xl);
   padding-inline-start: unset;
+  margin-block-start: unset;
+  margin-block-end: 4px;
+  padding: 8px;
 }
 
 nav ul li img {
-  height: 100%;
+  padding: 12px;
+  padding-bottom: 8px;
+}
+
+nav ul li {
+  cursor: pointer;
+}
+
+nav ul li.selected {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 80px;
 }
