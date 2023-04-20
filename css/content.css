@@ -29,20 +29,23 @@ article.card {
   border-top: var(--gap-xs) solid var(--color-primary);
 }
 
-.card:before {
-  content: url("/media/icon_bookmark_new_small_inactive.svg");
-  text-align: center;
-  float: right;
-  background-color: var(--color-secondary);
-  width: 40px;
-  height: 30px;
-  border-radius: 50px;
-  padding-top: 10px;
-}
-
 .bookmarked::before {
   background-color: var(--color-primary);
   content: url("/media/icon_bookmark_new_small.svg");
+}
+
+.bookmark {
+  float: right;
+  background-color: var(--color-secondary);
+  width: 24px;
+  height: 24px;
+  border-radius: 50px;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.bookmark.active {
+  background-color: var(--color-primary);
 }
 
 /*
@@ -227,10 +230,13 @@ input.mytoggle:checked ~ .darkmodeOFF {
   color: var(--color-font-inverse);
   margin: 12px -12px;
   display: none;
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .card .answer.active {
   display: block;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 /* Alternating Card Styles*/

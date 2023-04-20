@@ -1,9 +1,4 @@
-/*let toggle = document.getElementsByClassName("burger");
-let navMenu = burgerMenu[0].parentElement;
-burgerMenu[0].classList.toggle("opened");
-navMenu.classList.toggle("mobile");
-*/
-
+// Script to have awnser blocks appear on buttonclick
 let buttons = document.querySelectorAll("button");
 
 buttons.forEach((button) => {
@@ -12,26 +7,13 @@ buttons.forEach((button) => {
   });
 });
 
-function toggleBookmark() {
-  this[0].classList.toggle("active");
-}
+let bookmarks = document.querySelectorAll(".bookmark");
+console.log(bookmarks);
 
-/*
-const cardbookmarks = document.querySelectorAll("card");
-const bookmarkelement = document.getComputedStyle(cardbookmarks, ":after");
-
-bookmarkelement.forEach((bookmarked) => {
-  bookmarked.addEventListener("click", () => {
-    bookmarked.classList.toggle("bookmarked");
+bookmarks.forEach((bookmark) => {
+  console.log(bookmark);
+  bookmark.addEventListener("click", () => {
+    console.log(bookmark);
+    bookmark.classList.toggle("active");
   });
 });
-*/
-
-/*  NOTES
-function showAnswer() {
-  console.log(this);
-  this.nextSibling.classList.toggle("active");
-}
-
-bookmarked
-*/

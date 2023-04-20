@@ -8,6 +8,12 @@ header {
   font-size: 1.5em;
   letter-spacing: 0.1em;
   padding: var(--gap-xxs);
+  /* Code for fixed header
+  position:fixed;
+  top:0px;
+  width:100%;
+  max-width: 500px;
+  */
 }
 
 header h1 {
