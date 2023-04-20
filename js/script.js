@@ -4,7 +4,7 @@ burgerMenu[0].classList.toggle("opened");
 navMenu.classList.toggle("mobile");
 */
 
-const buttons = document.querySelectorAll("button");
+let buttons = document.querySelectorAll("button");
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -17,8 +17,21 @@ function toggleBookmark() {
 }
 
 /*
+const cardbookmarks = document.querySelectorAll("card");
+const bookmarkelement = document.getComputedStyle(cardbookmarks, ":after");
+
+bookmarkelement.forEach((bookmarked) => {
+  bookmarked.addEventListener("click", () => {
+    bookmarked.classList.toggle("bookmarked");
+  });
+});
+*/
+
+/*  NOTES
 function showAnswer() {
   console.log(this);
   this.nextSibling.classList.toggle("active");
 }
+
+bookmarked
 */

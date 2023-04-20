@@ -40,6 +40,7 @@ body {
   background-repeat: no-repeat;
   background-size: stretch;
   color: var(--color-font);
-  margin: 0px;
+  margin: 0px auto;
   font-family: var(--font-copy);
+  max-width: 500px;
 }
