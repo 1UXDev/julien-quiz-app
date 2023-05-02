@@ -3,13 +3,11 @@ main {
   margin-bottom: var(--gap-xxl);
   margin-top: var(--gap-m);
   line-height: 1.3em;
+  color: var(--color-font);
 }
 
 h2 {
   line-height: 1.2em;
-}
-
-p {
 }
 
 section {
@@ -18,20 +16,12 @@ section {
   gap: var(--gap-m);
 }
 
-article:before {
-}
-
 article.card {
-  background-color: rgb(255, 255, 255);
+  background-color: var(--color-inverse);
   border-radius: 8px;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.08);
   padding: var(--gap-s);
   border-top: var(--gap-xs) solid var(--color-primary);
-}
-
-.bookmarked::before {
-  background-color: var(--color-primary);
-  content: url("/media/icon_bookmark_new_small.svg");
 }
 
 .bookmark {
@@ -42,10 +32,11 @@ article.card {
   border-radius: 50px;
   padding: 6px;
   cursor: pointer;
+  transition: background-color 500ms ease-in-out;
 }
 
 .bookmark.active {
-  background-color: var(--color-primary);
+  background-color: var(--color-highlight);
 }
 
 .navhelp {
@@ -55,7 +46,7 @@ article.card {
   border-radius: 30px;
   background: var(--background-gradient-nav);
   width: 50%;
-  color: var(--color-font-inverse);
+  color: var(--color-inverse);
   margin: -24px 20% 12px 20%;
 }
 
@@ -146,6 +137,7 @@ profile page styles
   display: none;
 }
 
+/*Custom Toggle on profile*/
 label.mytoggle {
   display: block;
   width: 54px;
@@ -163,7 +155,7 @@ label.mytoggle:before {
   height: 22px;
   background: var(--color-secondary);
   border-radius: 50px;
-  border: 2px solid var(--color-font-inverse);
+  border: 2px solid var(--color-inverse);
 }
 
 input.mytoggle {
@@ -180,17 +172,6 @@ input.mytoggle:checked + label.mytoggle {
   background: var(--color-primary);
 }
 
-.darkmodeOFF {
-  display: none;
-}
-
-input.mytoggle:checked ~ .darkmodeON {
-  display: none;
-}
-input.mytoggle:checked ~ .darkmodeOFF {
-  display: block;
-}
-
 /* other general card styles*/
 
 .card h2 {
@@ -199,7 +180,7 @@ input.mytoggle:checked ~ .darkmodeOFF {
 
 .card button {
   background-color: var(--color-primary);
-  color: var(--color-font-inverse);
+  color: var(--color-inverse);
   padding: var(--gap-s);
   border-radius: 8px;
   border: none;
@@ -207,11 +188,15 @@ input.mytoggle:checked ~ .darkmodeOFF {
   font-weight: bold;
   cursor: pointer;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 2;
+  transition: background-color 300ms ease-in-out 200ms,
+    box-shadow 300ms ease-in-out;
 }
 
 .card button:hover {
   background-color: var(--color-primary);
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.16);
+  box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.18);
 }
 
 .card code {
@@ -232,22 +217,47 @@ input.mytoggle:checked ~ .darkmodeOFF {
   background-color: var(--color-secondary);
   padding: var(--gap-xs) var(--gap-m);
   border-radius: 50px;
-  color: var(--color-font-inverse);
+  color: var(--color-inverse);
+  cursor: pointer;
 }
+
+.card ul li:hover {
+  filter: saturate(150%);
+}
+
+/* ---------- Old without the animation, kept here while in DEV of this branch for backup purpose
 
 .card .answer {
   padding: var(--gap-m);
   background-color: var(--color-secondary);
-  color: var(--color-font-inverse);
+  color: var(--color-inverse);
   margin: 12px -12px;
   display: none;
-  animation-duration: 2s;
-  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .card .answer.active {
   display: block;
-  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+} */
+
+.card .answer {
+  padding: var(--gap-m);
+  background-color: var(--color-secondary);
+  color: var(--color-inverse);
+  margin: 12px -12px;
+  margin-top: -100px;
+  min-height: 50px;
+  position: relative;
+  opacity: 0;
+  transition: opacity 800ms ease-in-out 300ms, margin-top ease-in-out 200ms;
+}
+
+.card .answer.active {
+  opacity: 1;
+  margin-top: 12px;
+}
+
+.card .answer:not(.active) {
+  transition: opacity 200ms, margin-top 300ms 200ms;
 }
 
 /* Alternating Card Styles*/
@@ -266,4 +276,45 @@ article.card:nth-child(2n) {
 .card:nth-child(2n) .answer,
 .card:nth-child(2n) li {
   background-color: var(--color-quartary);
+}
+
+/*Input form for new Questions based on card*/
+.card form {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 12px;
+  padding: 5%;
+}
+
+.card form input,
+textarea {
+  border: 3px solid var(--color-primary);
+  padding: 8px;
+  font-size: 0.9em;
+  border-radius: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.card form span {
+  margin-bottom: 24px;
+  margin-top: -12px;
+  font-size: 0.9em;
+  text-align: right;
+}
+.card form span.over {
+  color: red;
+}
+
+.card form label {
+  background-color: var(--color-primary);
+  color: var(--color-inverse);
+  font-weight: bold;
+  padding: 6px 16px;
+  border-radius: 8px;
+}
+
+.card form button {
+  width: 50%;
+  min-width: 200px;
+  align-self: center;
 }

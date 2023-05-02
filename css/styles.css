@@ -2,14 +2,15 @@
 @import "content.css";
 
 :root {
-  --color-primary: rgb(102, 16, 224);
-  --color-secondary: #9b7ee0;
-  --color-tertiary: rgb(178, 32, 223);
-  --color-quartary: rgb(197, 103, 226);
-  --color-background: rgb(250, 245, 246);
-  --color-nav: #6710e0;
-  --color-font: rgb(50, 50, 50);
-  --color-font-inverse: white;
+  /*light mode*/
+  --color-primary: rgb(100, 60, 200);
+  --color-secondary: rgb(150, 100, 240);
+  --color-tertiary: rgb(150, 20, 200);
+  --color-quartary: rgb(170, 80, 190);
+  --color-nav: var(--color-primary);
+  --color-font: rgb(40, 40, 40);
+  --color-inverse: white;
+  --color-highlight: rgb(85, 20, 250);
 
   --background-gradient-nav: linear-gradient(
     60deg,
@@ -18,9 +19,12 @@
   );
   --background-gradient-body: linear-gradient(
     0deg,
-    rgb(70, 25, 177),
-    rgb(248, 218, 244)
+    var(--body-bg),
+    rgb(255, 220, 255)
   );
+  --body-bg: rgb(90, 50, 200);
+
+  /*dark mode is defined in a body-class*/
 
   --font-copy: "Roboto", sans-serif;
   --font-header: "Bangers", cursive;
@@ -36,11 +40,29 @@
 
 body {
   background: var(--background-gradient-body);
-  background-color: rgb(70, 25, 177);
+  background-color: var(--body-bg);
   background-repeat: no-repeat;
   background-size: stretch;
   color: var(--color-font);
   margin: 0px auto;
   font-family: var(--font-copy);
   max-width: 500px;
+}
+
+body.darkmode {
+  --color-primary: rgb(180, 100, 220);
+  --color-secondary: rgb(120, 50, 140);
+  --color-tertiary: rgb(100, 70, 240);
+  --color-quartary: rgb(80, 55, 190);
+  --color-nav: var(--color-quartary);
+  --color-font: rgb(240, 240, 240);
+  --color-inverse: rgb(40, 40, 40);
+
+  --background-gradient-nav: rgb(180, 100, 220);
+  --background-gradient-body: linear-gradient(
+    0deg,
+    var(--body-bg),
+    rgb(100, 0, 100)
+  );
+  --body-bg: rgb(40, 40, 100);
 }
