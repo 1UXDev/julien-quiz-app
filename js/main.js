@@ -17,37 +17,3 @@ function darkModeChecker() {
     console.log("nicht aktiviert");
   }
 }
-
-//script to append newly created questions
-let cardWrapper = document.querySelector('[data-js="cardWrapper"]');
-
-for (let x = 1; x < 10; x++) {
-  let frage = localStorage.getItem(`frage${x}`);
-  frage = frage.split(",");
-
-  let newQuestion = document.createElement("article");
-  newQuestion.classList.add("card");
-  newQuestion.innerHTML = `
-  <img
-    class="bookmark"
-    alt="bookmark this question"
-    src="/media/icon_bookmark_new_square.svg"
-  />
-  <h2>
-    ${frage[1]}
-  </h2>
-  <button class="button">Show Answer</button>
-  <p class="answer show">
-  ${frage[3]}
-  </p>
-  <ul class="tags">
-    <li>${frage[5]}</li>
-  </ul>
-  `;
-
-  // adding Event listener
-  buttonListener();
-
-  cardWrapper.append(newQuestion);
-  buttonListener();
-}
