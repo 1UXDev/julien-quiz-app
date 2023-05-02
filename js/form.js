@@ -1,6 +1,5 @@
 // Script to have form save input to local storage
-let formButton = document.querySelector('[data-js="formSubmit"]');
-let form = document.querySelector('[data-js="form"]');
+const form = document.querySelector('[data-js="form"]');
 let counter = localStorage.getItem("counter");
 
 form.addEventListener("submit", (e) => {
@@ -9,16 +8,7 @@ form.addEventListener("submit", (e) => {
   counter = Number(counter) + 1;
   localStorage.setItem("counter", counter);
 
-  /*   localStorage.setItem("frage" + counter, [
-    form.elements.questionName.name,
-    form.elements.questionName.value,
-    form.elements.questionAnswer.name,
-    form.elements.questionAnswer.value,
-    form.elements.questionTag.name,
-    form.elements.questionTag.value,
-  ]); */
-
-  let myObject = {
+  const myObject = {
     questionName: form.elements.questionName.value,
     questionAnswer: form.elements.questionAnswer.value,
     questionTag: form.elements.questionTag.value,
@@ -27,12 +17,13 @@ form.addEventListener("submit", (e) => {
   localStorage.setItem("frage" + counter, JSON.stringify(myObject));
 
   form.reset();
+  form.elements.questionName.focus();
 });
 
 // Script to show how many chars are left
-let charsName = document.querySelector('[data-js="questionNameChars"]');
-let charsAnswer = document.querySelector('[data-js="questionAnswerChars"]');
-let charsTag = document.querySelector('[data-js="questionTagChars"]');
+const charsName = document.querySelector('[data-js="questionNameChars"]');
+const charsAnswer = document.querySelector('[data-js="questionAnswerChars"]');
+const charsTag = document.querySelector('[data-js="questionTagChars"]');
 
 form.addEventListener("input", () => {
   charsLeft(charsName);
@@ -41,7 +32,7 @@ form.addEventListener("input", () => {
 });
 
 function charsLeft(c) {
-  let textAmount =
+  const textAmount =
     parseInt(c.previousElementSibling.getAttribute("maxlength")) -
     c.previousElementSibling.value.length;
 

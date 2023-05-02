@@ -1,43 +1,13 @@
 //script to append newly created questions
 const cardWrapper = document.querySelector('[data-js="cardWrapper"]');
-/* 
-for (let x = 1; x < 10; x++) {
-  let frage = localStorage.getItem(`frage${x}`);
-  frage = frage.split(",");
-
-  let newQuestion = document.createElement("article");
-  newQuestion.classList.add("card");
-  newQuestion.innerHTML = `
-  <img
-    class="bookmark"
-    alt="bookmark this question"
-    src="/media/icon_bookmark_new_square.svg"
-  />
-  <h2>
-    ${frage[1]}
-  </h2>
-  <button class="button">Show Answer</button>
-  <p class="answer show">
-  ${frage[3]}
-  </p>
-  <ul class="tags">
-    <li>${frage[5]}</li>
-  </ul>
-  `;
-
-  // adding Event listeners
-  buttonListener();
-
-  cardWrapper.append(newQuestion);
-  buttonListener();
-}
- */
 
 for (let x = 1; x < localStorage.length; x++) {
+  // iterate through the local storage and find keys for frage1 - frageX
   let frage = localStorage.getItem(`frage${x}`);
   frage = JSON.parse(frage);
 
   const tags = () => {
+    // create Array from the user-input for tags, which was hopefully seperated by comma (no QS rule implemented in the form... yet ;))
     const questionTags = frage.questionTag.split(",");
     let result = "";
 
@@ -73,5 +43,7 @@ for (let x = 1; x < localStorage.length; x++) {
   buttonListener();
 
   cardWrapper.append(newQuestion);
+
   buttonListener();
+  // I had to add a second eventListener to cover the odd and even cards which were appended... I have not yet understood why that is though!
 }

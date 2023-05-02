@@ -3,13 +3,11 @@ main {
   margin-bottom: var(--gap-xxl);
   margin-top: var(--gap-m);
   line-height: 1.3em;
+  color: var(--color-font);
 }
 
 h2 {
   line-height: 1.2em;
-}
-
-p {
 }
 
 section {
@@ -18,20 +16,12 @@ section {
   gap: var(--gap-m);
 }
 
-article:before {
-}
-
 article.card {
   background-color: var(--color-inverse);
   border-radius: 8px;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.08);
   padding: var(--gap-s);
   border-top: var(--gap-xs) solid var(--color-primary);
-}
-
-.bookmarked::before {
-  background-color: var(--color-primary);
-  content: url("/media/icon_bookmark_new_small.svg");
 }
 
 .bookmark {
@@ -46,8 +36,7 @@ article.card {
 }
 
 .bookmark.active {
-  background-color: var(--color-primary);
-  filter: contrast(150%);
+  background-color: var(--color-highlight);
 }
 
 .navhelp {
@@ -148,6 +137,7 @@ profile page styles
   display: none;
 }
 
+/*Custom Toggle on profile*/
 label.mytoggle {
   display: block;
   width: 54px;
@@ -181,19 +171,6 @@ input.mytoggle:checked + label.mytoggle {
   border-color: var(--color-primary);
   background: var(--color-primary);
 }
-
-/*
-.darkmodeOFF {
-  display: none;
-}
-
-input.mytoggle:checked ~ .darkmodeON {
-  display: none;
-}
-input.mytoggle:checked ~ .darkmodeOFF {
-  display: block;
-}
-/*
 
 /* other general card styles*/
 
@@ -271,7 +248,7 @@ input.mytoggle:checked ~ .darkmodeOFF {
   min-height: 50px;
   position: relative;
   opacity: 0;
-  transition: opacity 1s 500ms, margin-top 200ms;
+  transition: opacity 800ms ease-in-out 300ms, margin-top ease-in-out 200ms;
 }
 
 .card .answer.active {
@@ -280,7 +257,7 @@ input.mytoggle:checked ~ .darkmodeOFF {
 }
 
 .card .answer:not(.active) {
-  transition: opacity 200ms, margin-top 300ms 500ms;
+  transition: opacity 200ms, margin-top 300ms 200ms;
 }
 
 /* Alternating Card Styles*/
@@ -309,6 +286,15 @@ article.card:nth-child(2n) {
   padding: 5%;
 }
 
+.card form input,
+textarea {
+  border: 3px solid var(--color-primary);
+  padding: 8px;
+  font-size: 0.9em;
+  border-radius: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .card form span {
   margin-bottom: 24px;
   margin-top: -12px;
@@ -320,7 +306,11 @@ article.card:nth-child(2n) {
 }
 
 .card form label {
-  font-size: 1.2em;
+  background-color: var(--color-primary);
+  color: var(--color-inverse);
+  font-weight: bold;
+  padding: 6px 16px;
+  border-radius: 8px;
 }
 
 .card form button {

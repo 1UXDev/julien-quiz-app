@@ -10,6 +10,7 @@
   --color-nav: var(--color-primary);
   --color-font: rgb(40, 40, 40);
   --color-inverse: white;
+  --color-highlight: rgb(85, 20, 250);
 
   --background-gradient-nav: linear-gradient(
     60deg,
