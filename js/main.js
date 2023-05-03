@@ -1,7 +1,7 @@
-let darkmodeToggle = document.querySelector('[data-js="myToggle"]');
-let body = document.querySelector("body");
-let darkmodeEnabled = localStorage.getItem("darkmodeEnabled");
-let toggleText = document.querySelector('[data-js="myToggleText"');
+const darkmodeToggle = document.querySelector('[data-js="myToggle"]');
+const body = document.querySelector("body");
+let _darkmodeEnabled = localStorage.getItem("darkmodeEnabled");
+const toggleText = document.querySelector('[data-js="myToggleText"');
 
 document.onload = darkModeChecker();
 

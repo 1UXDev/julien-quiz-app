@@ -14,13 +14,13 @@ for (let x = 1; x < localStorage.length; x++) {
     for (let i = 0; i < questionTags.length; i++) {
       result += `<li>${questionTags[i]}</li>`;
     }
-
+    // also empty tags possible by typing ',,' -> has to be fixed in the future
     return result;
   };
 
   const newQuestion = document.createElement("article");
 
-  newQuestion.classList.add("card");
+  newQuestion.classList.add("card", "animate");
   newQuestion.innerHTML = `
   <img
     class="bookmark"

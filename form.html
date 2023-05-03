@@ -50,25 +50,27 @@
         <span>Create New Questions</span>
       </section>
       <section>
-        <article class="card">
+        <article class="card animate">
           <form data-js="form">
-            <label for="questionName">Your Question</label>
+            <label for="questionName">Your Question *</label>
             <textarea
               id="questionName"
               name="questionName"
               rows="5"
               maxlength="200"
               placeholder="What is your awesome Question?"
+              required
             ></textarea>
             <span data-js="questionNameChars">200 Characters left</span>
 
-            <label for="questionAnswer">Your Answer</label>
+            <label for="questionAnswer">Your Answer *</label>
             <textarea
               id="questionAnswer"
               name="questionAnswer"
               rows="5"
               maxlength="300"
               placeholder="What is the answer to your question?"
+              required
             ></textarea>
             <span data-js="questionAnswerChars">300 Characters left</span>
 
@@ -86,6 +88,7 @@
           </form>
         </article>
       </section>
+      <section data-js="cardWrapper"></section>
     </main>
     <footer></footer>
   </body>
