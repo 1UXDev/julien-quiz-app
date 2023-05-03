@@ -18,6 +18,7 @@ form.addEventListener("submit", (e) => {
 
   form.reset();
   form.elements.questionName.focus();
+  resetChars(charsName, charsAnswer, charsTag); //passing the constants holding the elements to the function
 });
 
 // Script to show how many chars are left
@@ -45,4 +46,14 @@ function charsLeft(c) {
   } else {
     c.classList.remove("over");
   }
+}
+
+//function to reset chars after formsubmission
+function resetChars(charsName, charsAnswer, charsTag) {
+  charsName.innerText =
+    charsName.previousElementSibling.getAttribute("maxlength");
+  charsAnswer.innerText =
+    charsAnswer.previousElementSibling.getAttribute("maxlength");
+  charsTag.innerText =
+    charsTag.previousElementSibling.getAttribute("maxlength");
 }

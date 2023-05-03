@@ -53,7 +53,10 @@
         <article class="card profile">
           <div class="user">
             <img src="/media/profile_picture.png" alt="profile picture" />
-            <h2>Max Power</h2>
+            <div>
+              <h2>Max Power</h2>
+              <p id="hintText">This is you</p>
+            </div>
           </div>
           <div class="about">
             <h3>About Me</h3>
@@ -64,18 +67,22 @@
               unde. In consequatur facilis eos?
             </p>
             <div class="counter">
-              <div class="questions">
-                <img
-                  src="/media/icon_question.svg"
-                  alt="questionmakr icon"
-                /><span>12</span>
-              </div>
-              <div class="bookmarks">
-                <img
-                  src="/media/icon_bookmark_new_square.svg"
-                  alt="bookmark icon"
-                /><span>4</span>
-              </div>
+              <a href="index.html">
+                <div class="questions">
+                  <img
+                    src="/media/icon_question.svg"
+                    alt="questionmakr icon"
+                  /><span data-js="profileQuestionAmount">12</span>
+                </div>
+              </a>
+              <a href="bookmarks.html">
+                <div class="bookmarks">
+                  <img
+                    src="/media/icon_bookmark_new_square.svg"
+                    alt="bookmark icon"
+                  /><span data-js="profileBookmarkAmount">4</span>
+                </div>
+              </a>
             </div>
           </div>
           <hr />
