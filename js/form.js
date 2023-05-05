@@ -1,25 +1,34 @@
 // Script to have form save input to local storage
 const form = document.querySelector('[data-js="form"]');
-let counter = localStorage.getItem("counter");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  counter = Number(counter) + 1;
-  localStorage.setItem("counter", counter);
+  // > Get JSON from localstorage
+  let storedQuestions = JSON.parse(localStorage.getItem("questionsObject"));
 
-  const myObject = {
-    questionName: form.elements.questionName.value,
-    questionAnswer: form.elements.questionAnswer.value,
-    questionTag: form.elements.questionTag.value,
+  // > Create Object from New Question
+  const myNewQuestionObject = {
+    id: storedQuestions.length + 1,
+    bookmarked: false,
+    question: form.elements.questionName.value,
+    answer: form.elements.questionAnswer.value,
+    tags: form.elements.questionTag.value.split(","), //tags in Array konvertieren
   };
 
-  localStorage.setItem("frage" + counter, JSON.stringify(myObject));
+  // > > Append the new item to the "StoredQuestions"
+  storedQuestions[storedQuestions.length] = myNewQuestionObject;
 
+  // > > > Write Object back into local Storage
+  localStorage.setItem("questionsObject", JSON.stringify(storedQuestions));
+
+  // > form Usability
   form.reset();
   form.elements.questionName.focus();
   resetChars(charsName, charsAnswer, charsTag); //passing the constants holding the elements to the function
 });
+
+// --------------------------------------------------------------------------------------------------------------
 
 // Script to show how many chars are left
 const charsName = document.querySelector('[data-js="questionNameChars"]');
@@ -32,6 +41,7 @@ form.addEventListener("input", () => {
   charsLeft(charsTag);
 });
 
+// Function: Buchstaben zählen und Text ändern
 function charsLeft(c) {
   const textAmount =
     parseInt(c.previousElementSibling.getAttribute("maxlength")) -
@@ -40,13 +50,15 @@ function charsLeft(c) {
   c.innerText = `${textAmount} characters left.
     `;
 
-  // Text rot färben
+  // > Text rot färben
   if (textAmount === 0) {
     c.classList.add("over");
   } else {
     c.classList.remove("over");
   }
 }
+
+// --------------------------------------------------------------------------------------------------------------
 
 //function to reset chars after formsubmission
 function resetChars(charsName, charsAnswer, charsTag) {

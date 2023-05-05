@@ -13,7 +13,5 @@ function darkModeChecker() {
     // Toggle richtig positionieren
     darkmodeToggle.previousElementSibling.setAttribute("checked", "true");
     toggleText.textContent = "Turn off Darkmode";
-  } else {
-    console.log("nicht aktiviert");
   }
 }
